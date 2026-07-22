@@ -468,15 +468,15 @@ section{padding:var(--section-padding);position:relative}
 /* ==========================================================================
    Rodapé
    ========================================================================== */
-.footer{background:linear-gradient(180deg,var(--color-white) 0%,var(--color-bg-dark) 10%,var(--color-bg-dark) 100%);color:var(--color-secondary);padding:4.5rem 1.5rem 4.5rem;font-size:0.9rem}
+.footer{background:var(--color-bg-dark);color:var(--color-secondary);padding:5.5rem 1.5rem 5.5rem;font-size:0.9rem;border-top:1px solid rgba(230,208,200,0.12)}
 .footer h3,.footer h4{color:var(--color-white)}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:4rem;margin-bottom:4rem}
-.footer-logo{display:block;width:100%;max-width:320px;margin-bottom:1.5rem}
+.footer-logo{display:block;width:100%;max-width:290px;margin-bottom:1.5rem}
 .footer-logo-img{width:100%;height:auto;object-fit:contain;display:block}
-.footer-brand p{color:rgba(230,208,200,0.7);max-width:300px;line-height:1.8;margin-bottom:2rem}
-.social-links{display:flex;gap:1.25rem}
-.social-icon{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:var(--color-secondary);border:1px solid rgba(230,208,200,0.15);transition:var(--transition-smooth)}
-.social-icon:hover{background:var(--color-primary);color:var(--color-white);transform:translateY(-3px);border-color:var(--color-primary)}
+.footer-brand p{color:rgba(230,208,200,0.7);max-width:100%;line-height:1.8;margin-bottom:2rem}
+.social-links{display:flex;gap:1.25rem;margin-top:0.5rem}
+.social-icon{width:48px;height:48px;font-size:1.35rem;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:var(--color-secondary);border:1px solid rgba(230,208,200,0.2);transition:var(--transition-smooth)}
+.social-icon:hover{background:var(--color-primary);color:var(--color-white);transform:translateY(-4px);border-color:var(--color-primary);box-shadow:0 8px 20px rgba(125,73,54,0.4)}
 .footer-col h4{font-size:var(--h4-size);margin-bottom:1.75rem;text-transform:uppercase;letter-spacing:0.1em;position:relative}
 .footer-col h4::after{content:'';position:absolute;bottom:-0.5rem;left:0;width:30px;height:1.5px;background:var(--color-primary)}
 .footer-col ul{list-style:none}
@@ -491,8 +491,8 @@ section{padding:var(--section-padding);position:relative}
 .map-link-btn{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(125,73,54,0.92);color:#FFFFFF;font-family:var(--font-heading);font-weight:700;font-size:0.75rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.55rem 1.1rem;border-radius:30px;display:inline-flex;align-items:center;gap:0.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:all 0.3s ease;white-space:nowrap;z-index:5}
 .map-link-btn:hover{background:var(--color-primary);transform:translateX(-50%) translateY(-2px);box-shadow:0 6px 20px rgba(125,73,54,0.6);color:#FFFFFF}
 .footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(230,208,200,0.1);color:rgba(230,208,200,0.5);font-size:0.8rem}
-@media (min-width:768px){.footer-grid{grid-template-columns:1fr 1.2fr}}
-@media (min-width:992px){.footer-grid{grid-template-columns:1.1fr 1.4fr 0.9fr;gap:3.5rem}}
+@media (min-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:3rem}}
+@media (min-width:992px){.footer-grid{grid-template-columns:repeat(3,1fr);gap:3.5rem;align-items:start}}
 
 /* ==========================================================================
    Animations & Scroll Reveal
