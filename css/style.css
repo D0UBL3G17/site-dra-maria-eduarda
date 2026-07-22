@@ -472,7 +472,7 @@ section{padding:var(--section-padding);position:relative}
 .footer h3,.footer h4{color:var(--color-white)}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:4rem;margin-bottom:4rem}
 .footer-logo{display:inline-block;margin-bottom:1.25rem}
-.footer-logo-img{height:54px;width:auto;object-fit:contain;display:block}
+.footer-logo-img{height:72px;width:auto;object-fit:contain;display:block}
 .footer-brand p{color:rgba(230,208,200,0.7);max-width:300px;line-height:1.8;margin-bottom:2rem}
 .social-links{display:flex;gap:1.25rem}
 .social-icon{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:var(--color-secondary);border:1px solid rgba(230,208,200,0.15);transition:var(--transition-smooth)}
