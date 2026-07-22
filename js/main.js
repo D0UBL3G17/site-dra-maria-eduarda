@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const fanCards = Array.from(document.querySelectorAll('.fan-card'));
     const fanBtnPrev = document.querySelector('.fan-prev');
     const fanBtnNext = document.querySelector('.fan-next');
-    const fanDots = Array.from(document.querySelectorAll('.fan-dot'));
 
     if (fanWrapper && fanCards.length > 0) {
         let centerIdx = Math.floor(fanCards.length / 2);
@@ -103,8 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.classList.remove('active-card');
                 }
             });
-
-            fanDots.forEach((dot, i) => dot.classList.toggle('active', i === centerIdx));
         };
 
         const nextCard = () => { centerIdx = (centerIdx + 1) % fanCards.length; updateFan(); };
@@ -112,10 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (fanBtnNext) fanBtnNext.addEventListener('click', nextCard);
         if (fanBtnPrev) fanBtnPrev.addEventListener('click', prevCard);
-
-        fanDots.forEach((dot, i) => {
-            dot.addEventListener('click', () => { centerIdx = i; updateFan(); });
-        });
 
         // Click on side cards to navigate
         fanCards.forEach((card, i) => {
