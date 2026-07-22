@@ -471,7 +471,8 @@ section{padding:var(--section-padding);position:relative}
 .footer{background:linear-gradient(180deg,var(--color-white) 0%,var(--color-bg-dark) 10%,var(--color-bg-dark) 100%);color:var(--color-secondary);padding:6.5rem 1.5rem 2rem;font-size:0.9rem}
 .footer h3,.footer h4{color:var(--color-white)}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:4rem;margin-bottom:4rem}
-.footer-brand h3{font-size:var(--h3-size);margin-bottom:1.5rem}
+.footer-logo{display:inline-block;margin-bottom:1.25rem}
+.footer-logo-img{height:54px;width:auto;object-fit:contain;display:block}
 .footer-brand p{color:rgba(230,208,200,0.7);max-width:300px;line-height:1.8;margin-bottom:2rem}
 .social-links{display:flex;gap:1.25rem}
 .social-icon{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:var(--color-secondary);border:1px solid rgba(230,208,200,0.15);transition:var(--transition-smooth)}
@@ -482,9 +483,15 @@ section{padding:var(--section-padding);position:relative}
 .footer-col li{margin-bottom:1rem;display:flex;align-items:flex-start;gap:0.75rem}
 .footer-col li i{color:var(--color-primary);margin-top:0.25rem}
 .footer-col li span{color:rgba(230,208,200,0.8)}
-.location-panel{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:1.5rem;width:100%}
-.map-wrapper{height:220px;border:1px solid rgba(230,208,200,0.15);border-radius:10px;overflow:hidden}
-.map-wrapper iframe{width:100%;height:100%;border:0;filter:grayscale(0.85) contrast(1.15) invert(0.92)}
+.location-panel{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:1rem;width:100%}
+.clinic-map-card{position:relative;display:block;width:100%;height:210px;border-radius:12px;overflow:hidden;border:1.5px solid rgba(230,208,200,0.25);box-shadow:0 10px 25px rgba(0,0,0,0.25);transition:all 0.4s cubic-bezier(0.25,1,0.5,1)}
+.clinic-map-card:hover{transform:translateY(-4px);border-color:var(--color-primary);box-shadow:0 16px 35px rgba(125,73,54,0.35)}
+.clinic-map-img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.6s cubic-bezier(0.25,1,0.5,1)}
+.clinic-map-card:hover .clinic-map-img{transform:scale(1.08)}
+.clinic-map-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top, rgba(12,12,14,0.85) 0%, rgba(12,12,14,0.3) 50%, rgba(12,12,14,0.15) 100%);display:flex;align-items:flex-end;justify-content:center;padding:1rem;transition:background 0.3s ease}
+.clinic-map-card:hover .clinic-map-overlay{background:linear-gradient(to top, rgba(12,12,14,0.92) 0%, rgba(12,12,14,0.4) 60%, rgba(12,12,14,0.2) 100%)}
+.clinic-map-badge{background:rgba(125,73,54,0.92);color:#FFFFFF;font-family:var(--font-heading);font-weight:700;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.6rem 1.2rem;border-radius:30px;display:inline-flex;align-items:center;gap:0.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:all 0.3s ease}
+.clinic-map-card:hover .clinic-map-badge{background:var(--color-primary);transform:translateY(-2px);box-shadow:0 6px 20px rgba(125,73,54,0.5)}
 .footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(230,208,200,0.1);color:rgba(230,208,200,0.5);font-size:0.8rem}
 @media (min-width:768px){.footer-grid{grid-template-columns:1fr 1.2fr}}
 @media (min-width:992px){.footer-grid{grid-template-columns:1.1fr 1.4fr 0.9fr;gap:3.5rem}}
