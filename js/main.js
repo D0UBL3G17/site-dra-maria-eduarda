@@ -110,10 +110,48 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fanBtnNext) fanBtnNext.addEventListener('click', nextCard);
         if (fanBtnPrev) fanBtnPrev.addEventListener('click', prevCard);
 
-        // Click on side cards to navigate
+        // Lightbox Modal Logic
+        const lightbox = document.getElementById('portfolio-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const lightboxOverlay = document.querySelector('.lightbox-overlay');
+
+        const openLightbox = (src, alt) => {
+            if (!lightbox || !lightboxImg) return;
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || 'Visualização do Resultado';
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            if (!lightbox) return;
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Click on side cards to navigate; click active center card to open Lightbox
         fanCards.forEach((card, i) => {
             card.addEventListener('click', () => {
-                if (i !== centerIdx) { centerIdx = i; updateFan(); }
+                if (i !== centerIdx) {
+                    centerIdx = i;
+                    updateFan();
+                } else {
+                    const img = card.querySelector('img');
+                    if (img) {
+                        openLightbox(img.src, img.alt);
+                    }
+                }
             });
         });
 
