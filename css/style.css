@@ -247,6 +247,9 @@ section{padding:var(--section-padding);position:relative}
 .service-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:0;background:var(--color-secondary);opacity:0.12;transition:var(--transition-smooth);z-index:1}
 .service-card:hover{transform:translateY(-6px);border-color:var(--color-primary);box-shadow:0 20px 40px rgba(125,73,54,0.08)}
 .service-card:hover::after{height:100%}
+.service-img-wrapper{width:100%;aspect-ratio:3/2;border-radius:10px;overflow:hidden;margin-bottom:1.25rem;z-index:2;position:relative;background:#FAF5F3;box-shadow:0 4px 15px rgba(125,73,54,0.06)}
+.service-img-wrapper img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.5s ease}
+.service-card:hover .service-img-wrapper img{transform:scale(1.05)}
 .service-icon{margin-bottom:1.5rem;color:var(--color-primary);z-index:2}
 .service-icon svg{width:40px;height:40px;fill:currentColor}
 .service-card h3{font-size:var(--h3-size);margin-bottom:0.75rem;z-index:2}
