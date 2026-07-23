@@ -178,8 +178,17 @@ section{padding:var(--section-padding);position:relative}
 .btn-primary:hover{background:var(--color-primary);transform:translateY(-3px);box-shadow:0 10px 20px rgba(125,73,54,0.15)}
 .btn-secondary{background:transparent;color:var(--color-dark);border-color:var(--color-dark)}
 .btn-secondary:hover{background:var(--color-dark);color:var(--color-white);transform:translateY(-3px)}
-.sticky-whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;box-shadow:0 10px 25px rgba(37,211,102,0.3);z-index:99;transition:var(--transition-smooth)}
-.sticky-whatsapp:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 15px 30px rgba(37,211,102,0.4)}
+.service-img-wrapper{width:100%;height:170px;border-radius:10px;overflow:hidden;margin-bottom:1.25rem;z-index:2;position:relative;background:var(--color-secondary);box-shadow:inset 0 0 0 1px rgba(125,73,54,0.1)}
+.service-img-wrapper img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.6s cubic-bezier(0.25,1,0.5,1)}
+.service-card:hover .service-img-wrapper img{transform:scale(1.08)}
+.sticky-whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.85rem;box-shadow:0 10px 25px rgba(37,211,102,0.4);z-index:99;transition:var(--transition-smooth);animation:wa-float 3s ease-in-out infinite}
+.sticky-whatsapp::before{content:'';position:absolute;top:-4px;left:-4px;right:-4px;bottom:-4px;border-radius:50%;border:2px solid #25D366;opacity:0;animation:wa-pulse 2s infinite}
+.sticky-whatsapp i{animation:wa-wiggle 4s ease-in-out infinite}
+.sticky-whatsapp:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(37,211,102,0.5)}
+
+@keyframes wa-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes wa-pulse{0%{transform:scale(0.9);opacity:0.85}70%{transform:scale(1.35);opacity:0}100%{transform:scale(1.4);opacity:0}}
+@keyframes wa-wiggle{0%,88%,100%{transform:rotate(0deg)}90%{transform:rotate(-12deg)}93%{transform:rotate(12deg)}96%{transform:rotate(-10deg)}98%{transform:rotate(10deg)}}
 
 /* ==========================================================================
    Hero Section (100vh)
@@ -234,14 +243,14 @@ section{padding:var(--section-padding);position:relative}
 .services-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:3.5rem}
 @media (min-width:576px){.services-grid{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:992px){.services-grid{grid-template-columns:repeat(3,1fr)}}
-.service-card{background:var(--color-white);padding:2.5rem 2rem;border:1px solid rgba(230,208,200,0.4);transition:var(--transition-smooth);position:relative;display:flex;flex-direction:column;align-items:flex-start}
+.service-card{background:var(--color-white);padding:1.5rem;border:1px solid rgba(230,208,200,0.4);border-radius:12px;transition:var(--transition-smooth);position:relative;display:flex;flex-direction:column;align-items:flex-start;overflow:hidden}
 .service-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:0;background:var(--color-secondary);opacity:0.12;transition:var(--transition-smooth);z-index:1}
-.service-card:hover{transform:translateY(-5px);border-color:var(--color-primary);box-shadow:0 20px 40px rgba(125,73,54,0.04)}
+.service-card:hover{transform:translateY(-6px);border-color:var(--color-primary);box-shadow:0 20px 40px rgba(125,73,54,0.08)}
 .service-card:hover::after{height:100%}
 .service-icon{margin-bottom:1.5rem;color:var(--color-primary);z-index:2}
 .service-icon svg{width:40px;height:40px;fill:currentColor}
-.service-card h3{font-size:1.25rem;margin-bottom:1rem;z-index:2}
-.service-card p{font-size:0.9rem;color:var(--color-text-muted);z-index:2;margin-bottom:1.5rem}
+.service-card h3{font-size:var(--h3-size);margin-bottom:0.75rem;z-index:2}
+.service-card p{font-size:0.9rem;color:var(--color-text-muted);z-index:2;margin-bottom:1.5rem;line-height:1.6}
 .service-link{font-family:var(--font-heading);font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-primary);margin-top:auto;z-index:2;display:flex;align-items:center;gap:0.5rem}
 .service-link i{transition:transform 0.3s ease}
 .service-card:hover .service-link i{transform:translateX(5px)}
@@ -792,8 +801,35 @@ html, body {
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     margin-bottom: 2rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 260px;
+  }
+
+  .footer-logo-img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .footer-brand p {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 
   .location-panel {
